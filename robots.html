@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Humanoid Robots — HumanoidVerse Database</title>
+  <meta name="description" content="Browse and filter the complete database of humanoid robots. Compare specs, prices, and capabilities.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">🤖 <span>HumanoidVerse</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="robots.html" class="active">Robots</a></li>
+      <li><a href="compare.html">Compare</a></li>
+      <li><a href="index.html#news">News</a></li>
+      <li><a href="compare.html" class="nav-cta">⚔️ Compare Now</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>Humanoid Robot Database</h1>
+    <p>Browse, search, and filter through the world's most advanced humanoid robots</p>
+  </div>
+</div>
+
+<section class="section" style="padding-top: 40px;">
+  <div class="container">
+    <div class="filters-bar">
+      <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search robots...">
+      <select class="filter-select" id="categoryFilter"><option value="All">All Categories</option></select>
+      <select class="filter-select" id="manufacturerFilter"><option value="All">All Manufacturers</option></select>
+      <select class="filter-select" id="sortSelect">
+        <option value="name">Sort: Name</option>
+        <option value="year">Sort: Newest</option>
+        <option value="speed">Sort: Speed</option>
+        <option value="dof">Sort: DoF</option>
+        <option value="payload">Sort: Payload</option>
+        <option value="height">Sort: Height</option>
+      </select>
+    </div>
+    <div class="robots-grid" id="allRobotsGrid"></div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="robotModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-hero"><span class="placeholder-icon">🤖</span></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">© 2026 HumanoidVerse. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => { initNavbar(); initModal(); initRobotsPage(); });</script>
+</body>
+</html>

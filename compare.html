@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Humanoid Robots — HumanoidVerse</title>
+  <meta name="description" content="Compare humanoid robots side by side. See specs, strengths, and weaknesses at a glance.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">🤖 <span>HumanoidVerse</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="robots.html">Robots</a></li>
+      <li><a href="compare.html" class="active">Compare</a></li>
+      <li><a href="index.html#news">News</a></li>
+      <li><a href="compare.html" class="nav-cta">⚔️ Compare Now</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>⚔️ Compare Robots</h1>
+    <p>Select two humanoid robots to see a detailed side-by-side comparison</p>
+  </div>
+</div>
+
+<section class="section" style="padding-top: 40px;">
+  <div class="container">
+    <div style="display: flex; gap: 16px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap;">
+      <select class="filter-select" id="robot1Select" style="min-width: 240px; font-size: 1rem; padding: 12px 20px;"></select>
+      <span style="display:flex; align-items:center; font-size: 1.5rem; font-weight: 700; color: var(--accent-blue);">VS</span>
+      <select class="filter-select" id="robot2Select" style="min-width: 240px; font-size: 1rem; padding: 12px 20px;"></select>
+    </div>
+    <div class="compare-container" style="position: relative;">
+      <div class="compare-select-area glass" id="compare1"></div>
+      <div class="vs-badge">VS</div>
+      <div class="compare-select-area glass" id="compare2"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">© 2026 HumanoidVerse. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => { initNavbar(); initComparePage(); });</script>
+</body>
+</html>

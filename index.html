@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HumanoidVerse — The Ultimate Humanoid Robot Database</title>
+  <meta name="description" content="Explore, compare, and discover the world's most advanced humanoid robots. Detailed specs, head-to-head comparisons, and the latest industry news.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">🤖 <span>HumanoidVerse</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="robots.html">Robots</a></li>
+      <li><a href="compare.html">Compare</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="compare.html" class="nav-cta">⚔️ Compare Now</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div class="hero-badge"><span class="dot"></span> Tracking 31 Humanoid Robots in Real-Time</div>
+    <h1>The Future of<br><span class="gradient">Humanoid Robotics</span></h1>
+    <p>Explore detailed profiles, compare specifications side-by-side, and stay updated with the latest breakthroughs in humanoid robot technology.</p>
+    <div class="hero-actions">
+      <a href="robots.html" class="btn btn-primary">🔍 Explore Robots</a>
+      <a href="compare.html" class="btn btn-secondary">⚔️ Compare Robots</a>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-item"><div class="stat-number" id="statRobots">31</div><div class="stat-label">Robots Tracked</div></div>
+      <div class="stat-item"><div class="stat-number">22+</div><div class="stat-label">Manufacturers</div></div>
+      <div class="stat-item"><div class="stat-number">$38B</div><div class="stat-label">Market Size 2026</div></div>
+      <div class="stat-item"><div class="stat-number">16K+</div><div class="stat-label">Units Deployed</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Robots -->
+<section class="section" id="featured">
+  <div class="container">
+    <div class="section-header">
+      <h2>Featured Humanoid Robots</h2>
+      <p>The most advanced humanoid robots pushing the boundaries of technology</p>
+    </div>
+    <div class="robots-grid" id="featuredGrid"></div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="robots.html" class="btn btn-secondary">View All Robots →</a>
+    </div>
+  </div>
+</section>
+
+<!-- News -->
+<section class="section" id="news" style="background: var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header">
+      <h2>Latest News</h2>
+      <p>Stay updated with the latest developments in humanoid robotics</p>
+    </div>
+    <div class="news-grid" id="newsGrid"></div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="section">
+  <div class="container">
+    <div class="newsletter">
+      <h2>🚀 Stay Ahead of the Curve</h2>
+      <p>Get weekly updates on humanoid robot breakthroughs, market analysis, and exclusive comparisons.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="your@email.com" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>🤖 <span>HumanoidVerse</span></h3>
+        <p>The most comprehensive humanoid robot database. Compare, discover, and stay informed.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="robots.html">All Robots</a>
+        <a href="compare.html">Compare</a>
+        <a href="#news">News</a>
+      </div>
+      <div class="footer-col">
+        <h4>Top Robots</h4>
+        <a href="#">Atlas</a>
+        <a href="#">Optimus</a>
+        <a href="#">Figure 03</a>
+        <a href="#">Digit</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HumanoidVerse. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- Robot Detail Modal -->
+<div class="modal-overlay" id="robotModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-hero"><span class="placeholder-icon">🤖</span></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "humanoidverse",
+  "version": "1.0.0",
+  "description": "The World's Most Comprehensive Humanoid Robot Database",
+  "scripts": {
+    "verify": "node tools/verify_specs.js",
+    "dev": "npx serve ."
+  },
+  "private": true
+}

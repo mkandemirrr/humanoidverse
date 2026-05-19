@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsletter();
   initScrollAnimations();
   initModal();
+  initCounterAnimations();
+  initParallaxHero();
 });
 
 // ── Navbar ──
@@ -315,5 +317,64 @@ function highlightWinners() {
       if (v1 < v2) { row1.classList.add('winner'); row2.classList.add('loser'); }
       else { row2.classList.add('winner'); row1.classList.add('loser'); }
     }
+  });
+}
+
+// ── Animated Counters ──
+function initCounterAnimations() {
+  const counters = document.querySelectorAll('.stat-number');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(el => observer.observe(el));
+}
+
+function animateCounter(el) {
+  const text = el.textContent;
+  const match = text.match(/(\d+)/);
+  if (!match) return;
+
+  const target = parseInt(match[1]);
+  const suffix = text.replace(match[1], '');
+  const duration = 1500;
+  const start = performance.now();
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(target * eased) + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+// ── Parallax Hero Mouse Effect ──
+function initParallaxHero() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    
+    const bg = hero.querySelector('.hero-bg');
+    if (bg) {
+      bg.style.transform = `translate(${x * 20}px, ${y * 15}px)`;
+    }
+  });
+
+  hero.addEventListener('mouseleave', () => {
+    const bg = hero.querySelector('.hero-bg');
+    if (bg) bg.style.transform = 'translate(0, 0)';
   });
 }

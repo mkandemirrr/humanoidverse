@@ -4,7 +4,9 @@
   "description": "The World's Most Comprehensive Humanoid Robot Database",
   "scripts": {
     "verify": "node tools/verify_specs.js",
-    "dev": "npx serve ."
+    "dev": "npx serve .",
+    "validate": "node tools/validate_specs.mjs robots.json",
+    "discover": "node tools/discover_robots.mjs"
   },
   "private": true
 }

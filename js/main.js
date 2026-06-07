@@ -1,6 +1,17 @@
 // HumanoidVerse — Main Application Logic
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  // Load robots from JSON (single source of truth)
+  try {
+    const res = await fetch('robots.json');
+    ROBOTS = await res.json();
+    MANUFACTURERS = [...new Set(ROBOTS.map(r => r.manufacturer))];
+  } catch (e) {
+    console.error('Failed to load robots.json:', e);
+    ROBOTS = [];
+    MANUFACTURERS = [];
+  }
+
   initNavbar();
   initFeaturedRobots();
   initNews();
@@ -43,6 +54,7 @@ function createRobotCard(robot) {
       <div class="robot-card-image" style="background: linear-gradient(135deg, ${robot.color}15, ${robot.color}05);">
         <span class="placeholder-icon">🤖</span>
         <span class="card-badge">${robot.status}</span>
+        ${robot.verified === false ? '<span class="card-badge" style="background: rgba(255,140,0,0.2); color: #ff8c42; border: 1px solid rgba(255,140,0,0.3);">⚠ Unverified</span>' : ''}
       </div>
       <div class="robot-card-body">
         <div class="manufacturer">${robot.manufacturer} · ${robot.country}</div>

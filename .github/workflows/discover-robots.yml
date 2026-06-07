@@ -1,0 +1,39 @@
+name: Discover new humanoid robots
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Discover new robots
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tools/discover_robots.mjs
+
+      - name: Validate the result
+        run: node tools/validate_specs.mjs robots.json
+
+      - name: Open a pull request if anything changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: auto/discovered-robots
+          delete-branch: true
+          title: "🤖 New humanoid robots discovered (needs review)"
+          body-path: pr-body.md
+          commit-message: "data: add newly discovered humanoid robots (unverified)"
+          add-paths: |
+            robots.json

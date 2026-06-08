@@ -1,15 +1,34 @@
 #!/usr/bin/env node
 /**
  * discover_robots.mjs — AI-assisted discovery of newly launched humanoid robots.
+ *
+ * Pipeline:
+ *   1. Read existing robots from robots.json (so known ones aren't re-added).
+ *   2. Pull recent humanoid-robot news headlines (Google News RSS, no API key).
+ *   3. Ask Claude (with the web_search tool ON) to find robots NOT in the list
+ *      and draft a schema-compliant entry for each, citing real sources.
+ *   4. Validate every draft with the deterministic bounds checker.
+ *   5. Append survivors to robots.json as { verified: false } + write pr-body.md.
+ *
+ * The GitHub Action then opens a PULL REQUEST. A human reviews specs before
+ * merge. Claude DRAFTS the skeleton and cites sources; it never auto-approves
+ * numbers — LLMs hallucinate specs, so the human is the gate.
+ *
+ * Env:  ANTHROPIC_API_KEY (required)
+ *       DISCOVERY_MODEL   (optional, default below)
+ *       ROBOTS_FILE       (optional, default "robots.json")
+ * Run:  node tools/discover_robots.mjs
  */
 
 import fs from 'node:fs';
-import { validateRobot } from './validate_specs.mjs';
+import { validateRobot, CATEGORIES } from './validate_specs.mjs';
 
 const API_KEY = process.env.ANTHROPIC_API_KEY;
+// Model string — confirm the current one at:
+// https://docs.claude.com/en/docs/about-claude/models/overview
 const MODEL = process.env.DISCOVERY_MODEL || 'claude-sonnet-4-6';
 const ROBOTS_FILE = process.env.ROBOTS_FILE || 'robots.json';
-const NEWS_WINDOW = '14d';
+const NEWS_WINDOW = '14d'; // how far back to scan
 
 const NEWS_QUERIES = [
   'humanoid robot unveiled',
@@ -38,7 +57,7 @@ async function fetchHeadlines() {
       console.warn(`news fetch failed for "${q}": ${e.message}`);
     }
   }
-  return [...new Map(items.map(i => [i.title, i])).values()];
+  return [...new Map(items.map(i => [i.title, i])).values()]; // dedupe by title
 }
 
 const SCHEMA = `{
@@ -49,7 +68,7 @@ const SCHEMA = `{
   "year": 2026,
   "generation": "e.g. Gen 3 / Electric",
   "status": "Prototype | Pilot | Production | Research",
-  "category": "Industrial | General Purpose | Home Assistant | Healthcare | Research | Social | Entertainment | Education | Logistics",
+  "category": "exactly one of the allowed categories listed below — never invent or combine values",
   "tagline": "short slogan",
   "description": "2-3 neutral sentences",
   "specs": { "height": 170, "weight": 60, "dof": 40, "speed": 1.5, "payload": 15, "battery": 4, "ip_rating": "IP54", "actuator": "Electric", "connectivity": "Wi-Fi" },
@@ -63,21 +82,22 @@ const SCHEMA = `{
 async function askClaude(existingNames, headlines) {
   const prompt = `You maintain a humanoid-robot database. Below are recent news headlines (last ${NEWS_WINDOW}) and the robots ALREADY in the database.
 
-Find humanoid robots that are NOT already in the list. For each new robot:
+Find humanoid robots that are NOT already in the list. Treat a clearly new generation (e.g. "Walker S2" when only "Walker S1" exists) as a new entry. For each new robot:
 - Use the web_search tool to confirm it exists and find REAL specifications.
-- Fill this exact JSON schema. Use null for any spec you cannot confirm. DO NOT guess numbers.
-- Put the actual source URLs in "sources". Always keep "verified": false.
+- Fill this exact JSON schema. Use null for any spec you cannot confirm from a credible source. DO NOT guess numbers.
+- "category" MUST be exactly one of these (copy verbatim, never invent or combine them): ${CATEGORIES.join(', ')}. Pick the single closest fit.
+- Put the actual source URLs you used in "sources". Always keep "verified": false.
 
-Schema:
+Schema (one object per robot):
 ${SCHEMA}
 
-Already in the database:
+Already in the database (do NOT re-add these):
 ${existingNames.join(', ')}
 
 Recent headlines:
 ${headlines.map(h => `- ${h.title}`).join('\n')}
 
-Respond with ONLY a JSON array of robot objects. If no new robots, respond with [].`;
+Respond with ONLY a JSON array of robot objects — no markdown, no commentary. If there are no genuinely new robots, respond with [].`;
 
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
@@ -97,13 +117,14 @@ Respond with ONLY a JSON array of robot objects. If no new robots, respond with 
   const data = await res.json();
   if (data.error) throw new Error(`API error: ${data.error.message}`);
 
+  // The model interleaves web_search tool calls with text; keep only text blocks.
   const text = (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('\n');
   const start = text.indexOf('['), end = text.lastIndexOf(']');
-  if (start === -1 || end === -1) { console.warn('No JSON array found.'); return []; }
+  if (start === -1 || end === -1) { console.warn('No JSON array found in the response.'); return []; }
   try {
     return JSON.parse(text.slice(start, end + 1));
   } catch (e) {
-    console.error('Could not parse model JSON:', e.message);
+    console.error('Could not parse the model JSON:', e.message);
     return [];
   }
 }

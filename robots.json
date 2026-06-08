@@ -171,7 +171,7 @@
     "year": 2024,
     "generation": "1st Gen",
     "status": "Available for Purchase",
-    "category": "Research & Education",
+    "category": "Research",
     "tagline": "The Most Affordable Humanoid Robot",
     "description": "Unitree G1 disrupted the market with its incredibly low price point, making humanoid robotics accessible to researchers, educators, and hobbyists worldwide. Despite its price, it offers impressive capabilities.",
     "specs": {
@@ -253,7 +253,7 @@
     "year": 2025,
     "generation": "2nd Gen",
     "status": "Pilot Program",
-    "category": "Healthcare & Industrial",
+    "category": "Healthcare",
     "tagline": "Intelligence Meets Rehabilitation",
     "description": "Fourier Intelligence's GR-2 builds on the company's expertise in rehabilitation robotics. It features advanced force control and human-robot interaction capabilities.",
     "specs": {
@@ -294,7 +294,7 @@
     "year": 2025,
     "generation": "S2",
     "status": "Pilot Program",
-    "category": "Industrial & Service",
+    "category": "Industrial",
     "tagline": "China's Most Advanced Humanoid",
     "description": "UBTECH's Walker S2 is one of China's flagship humanoid robots, featuring advanced manipulation, vision systems, and deployment in automotive manufacturing facilities.",
     "specs": {
@@ -335,7 +335,7 @@
     "year": 2025,
     "generation": "Gamma",
     "status": "Pilot Program",
-    "category": "Home & Service",
+    "category": "Home Assistant",
     "tagline": "Your Future Home Companion",
     "description": "1X Technologies' NEO is designed specifically for home environments. With a friendly design and safe human interaction capabilities, it aims to be the first humanoid you'd welcome into your living room.",
     "specs": {
@@ -458,7 +458,7 @@
     "year": 2025,
     "generation": "S1",
     "status": "R&D",
-    "category": "Service & Home",
+    "category": "Home Assistant",
     "tagline": "Speed & Precision Redefined",
     "description": "Astribot S1 gained viral attention for its incredibly fast and precise manipulation capabilities. It can perform delicate tasks like pouring tea, writing calligraphy, and handling fragile objects at superhuman speed. Uses a wheeled omnidirectional base.",
     "specs": {
@@ -499,7 +499,7 @@
     "year": 2014,
     "generation": "Legacy",
     "status": "Available",
-    "category": "Social & Service",
+    "category": "Social",
     "tagline": "The Pioneer of Social Robotics",
     "description": "Pepper was one of the first commercially available social humanoid robots. Though smaller and less capable than modern humanoids, it pioneered human-robot emotional interaction and remains widely deployed in retail and hospitality.",
     "specs": {
@@ -540,7 +540,7 @@
     "year": 2000,
     "generation": "Legacy",
     "status": "Retired (2022)",
-    "category": "Research & Legacy",
+    "category": "Research",
     "tagline": "The Grandfather of Modern Humanoids",
     "description": "Honda's ASIMO (Advanced Step in Innovative Mobility) was the world's most iconic humanoid robot for over two decades. Though retired in 2022, its bipedal locomotion research laid the groundwork for every modern humanoid.",
     "specs": {
@@ -622,7 +622,7 @@
     "year": 2021,
     "generation": "Mark 2",
     "status": "Available",
-    "category": "Social & Entertainment",
+    "category": "Social",
     "tagline": "The World's Most Expressive Robot",
     "description": "Ameca by Engineered Arts is the most advanced social humanoid robot, known for its incredibly lifelike facial expressions. It serves as a platform for AI and HRI research, and has gone viral multiple times for its eerily human-like reactions.",
     "specs": {
@@ -663,7 +663,7 @@
     "year": 2025,
     "generation": "1st Gen",
     "status": "Pilot Program",
-    "category": "Manufacturing",
+    "category": "Industrial",
     "tagline": "Cognitive Intelligence for Industry",
     "description": "Neura Robotics' 4NE-1 is a cognitive humanoid designed for manufacturing environments. Backed by significant European investment, it combines advanced perception with industrial-grade reliability for factory automation.",
     "specs": {
@@ -827,7 +827,7 @@
     "year": 2016,
     "generation": "Legacy / Ongoing",
     "status": "Available",
-    "category": "Social & Entertainment",
+    "category": "Social",
     "tagline": "The World's Most Famous Robot",
     "description": "Sophia is the world's most recognizable humanoid robot and the first to receive citizenship (Saudi Arabia, 2017). While not bipedal, she represents a milestone in social robotics and AI-human interaction, appearing on countless media outlets worldwide.",
     "specs": {
@@ -950,7 +950,7 @@
     "year": 2024,
     "generation": "1st Gen",
     "status": "Available for Purchase",
-    "category": "Research & Education",
+    "category": "Research",
     "tagline": "Dynamic Bipedal Research Platform",
     "description": "Leju Robotics' KUAVO is a highly dynamic bipedal humanoid known for its impressive locomotion capabilities. It has demonstrated backflips and dynamic movements, positioning it as a compelling research and education platform.",
     "specs": {
@@ -991,7 +991,7 @@
     "year": 2025,
     "generation": "1st Gen",
     "status": "Available for Purchase",
-    "category": "Research & Education",
+    "category": "Research",
     "tagline": "Ultra-Affordable Consumer Humanoid",
     "description": "Noetix Robotics' Bumi is a compact, affordable consumer humanoid robot from Beijing. At just ~$1,400, it sold out rapidly on JD.com and brings humanoid robotics to the mass consumer and education market.",
     "specs": {
@@ -1073,7 +1073,7 @@
     "year": 2025,
     "generation": "1st Gen",
     "status": "Pre-order",
-    "category": "Home & Service",
+    "category": "Home Assistant",
     "tagline": "The Ultra-Affordable Home Humanoid",
     "description": "Unitree R1 Air is a compact companion humanoid robot announced for the home market. Leveraging Unitree's manufacturing prowess, it targets an incredibly low price point to bring humanoid robotics to everyday consumers.",
     "specs": {
@@ -1155,7 +1155,7 @@
     "year": 2025,
     "generation": "1st Gen",
     "status": "Pilot Program",
-    "category": "Manufacturing",
+    "category": "Industrial",
     "tagline": "Embodied Intelligence for Factories",
     "description": "Galbot's G1 is a dual-arm humanoid robot with omnidirectional wheeled chassis, designed for flexible manufacturing and retail tasks. It features 7-DoF arms with up to 2.4m workspace reach and 10-hour battery life.",
     "specs": {

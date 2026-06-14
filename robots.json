@@ -1555,5 +1555,228 @@
     "sources": [
       "https://www.yankodesign.com/2026/02/21/5-humanoid-robots-being-launched-in-2026-the-first-one-flies/"
     ]
+  },
+  {
+    "id": "kengo",
+    "name": "Kengo",
+    "manufacturer": "Galaxea Dynamics",
+    "country": "China",
+    "year": 2026,
+    "generation": "Gen 1 Bipedal",
+    "status": "Prototype",
+    "category": "General Purpose",
+    "tagline": "First bipedal step from wheeled to walking AI",
+    "description": "Kengo is Galaxea Dynamics' first self-developed bipedal humanoid robot, unveiled June 2, 2026, marking the company's expansion from wheeled dual-arm platforms into legged robotics. It centers on a high-performance motor 'cerebellum' and an embodied AI 'brain' designed for real-world navigation across industrial, commercial, and domestic environments. The robot features a high-dynamic, high-torque lightweight frame with single-joint torque exceeding 130 N·m and a standardized two-module architecture intended to facilitate mass production.",
+    "specs": {
+      "height": 170,
+      "weight": 65,
+      "dof": 32,
+      "speed": null,
+      "payload": null,
+      "battery": null,
+      "ip_rating": null,
+      "actuator": "Electric",
+      "connectivity": null
+    },
+    "pros": [
+      "High single-joint torque (>130 N·m) enables dynamic and expressive movement",
+      "Standardized two-module architecture designed for mass production scalability",
+      "Flexible multi-environment target: industrial, commercial, and domestic",
+      "Built on Galaxea's proven embodied AI stack (G0 model) used in its wheeled robots"
+    ],
+    "cons": [
+      "No detailed specifications or pricing publicly released at launch",
+      "First-generation bipedal platform — no track record in legged locomotion",
+      "Community skepticism about prioritizing bipedal form over dexterous hands"
+    ],
+    "price": "Unknown",
+    "verified": false,
+    "sources": [
+      "https://autonews.gasgoo.com/articles/news/product-launch-galaxea-dynamics-unveils-bipedal-humanoid-robot-kengo-2062159428718252032",
+      "https://humanoid.guide/neo-what-1x-just-launched/"
+    ],
+    "discovered_date": "2026-06-14"
+  },
+  {
+    "id": "unitree-h2-plus",
+    "name": "Unitree H2 Plus",
+    "manufacturer": "Unitree Robotics",
+    "country": "China",
+    "year": 2026,
+    "generation": "H2 / NVIDIA Isaac GR00T Reference Design",
+    "status": "Pilot",
+    "category": "Research",
+    "tagline": "The first open humanoid robot reference design for frontier research",
+    "description": "The Unitree H2 Plus is the first open humanoid robot reference design built on the NVIDIA Isaac GR00T platform, announced at NVIDIA GTC Taipei on June 1, 2026. It combines a Unitree H2 Plus humanoid chassis with dual Sharpa Wave tactile five-finger hands, NVIDIA Jetson Thor onboard compute, and the full Isaac GR00T open software stack for data capture, simulation, training, and deployment. The integrated system provides research institutions with a unified, open hardware-software foundation to accelerate frontier humanoid robotics work without proprietary lock-in.",
+    "specs": {
+      "height": 182,
+      "weight": 68,
+      "dof": 75,
+      "speed": 2,
+      "payload": null,
+      "battery": 3,
+      "ip_rating": null,
+      "actuator": "Electric",
+      "connectivity": "Wi-Fi"
+    },
+    "pros": [
+      "First fully open humanoid reference design — no proprietary platform required",
+      "75 total DOF including 22 DOF from Sharpa Wave dexterous five-finger hands",
+      "NVIDIA Jetson Thor onboard compute with Blackwell-architecture AI performance",
+      "Adopted by top institutions: Ai2, ETH Zurich, Stanford Robotics Center, UC San Diego",
+      "Isaac GR00T open software stack covers full pipeline from data to deployment"
+    ],
+    "cons": [
+      "Not available until late 2026",
+      "High integration complexity for teams not already familiar with NVIDIA Isaac ecosystem",
+      "Price not yet publicly confirmed",
+      "No physical robot was demonstrated at announcement — renders only shown at Computex"
+    ],
+    "price": "~$30k (H2 base chassis); H2 Plus bundle pricing unconfirmed",
+    "verified": false,
+    "sources": [
+      "https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design",
+      "https://www.roboticstomorrow.com/news/2026/06/01/unitree-announces-h2-plus-an-nvidia-isaac-gr00t-reference-humanoid-robot-for-academic-research/26649/",
+      "https://gamesbeat.com/nvidia-and-unitree-release-h2-plus-reference-design-for-humanoid-robots/",
+      "https://www.engineering.com/unitree-unveils-h2-plus-humanoid-reference-design/",
+      "https://techbriefly.com/2026/06/01/nvidia-isaac-gr00t-humanoid-robot-platform-computex/"
+    ],
+    "discovered_date": "2026-06-14"
+  },
+  {
+    "id": "vindynamics-dyno",
+    "name": "Dyno",
+    "manufacturer": "VinDynamics (Vingroup)",
+    "country": "Vietnam",
+    "year": 2026,
+    "generation": "Gen 1",
+    "status": "Pilot",
+    "category": "Social",
+    "tagline": "Vietnam's first humanoid guide and service robot",
+    "description": "Dyno is VinDynamics' first humanoid robot, officially unveiled at ICRA 2026 in Vienna and Computex Taipei 2026 in June 2026. Designed as a versatile intelligent assistant for modern living environments, it is equipped with an advanced AI platform and environmental sensing system optimized for security, surveillance, and guide applications across urban areas, campuses, and service complexes. Dyno was previously piloted as a multilingual robotic guide at Vinpearl Safari Phu Quoc, demonstrating natural communication, multilingual narration, and real-world adaptability.",
+    "specs": {
+      "height": null,
+      "weight": null,
+      "dof": null,
+      "speed": null,
+      "payload": null,
+      "battery": null,
+      "ip_rating": null,
+      "actuator": "Electric",
+      "connectivity": null
+    },
+    "pros": [
+      "Already field-tested in real-world outdoor environment at Vinpearl Safari",
+      "Multilingual communication capability for tourism and hospitality",
+      "Advanced AI platform with responsive environmental sensing",
+      "Marks Vietnam's entry into global humanoid robotics"
+    ],
+    "cons": [
+      "No hardware specifications publicly released",
+      "First-generation robot from a newly founded company (est. September 2025)",
+      "Commercial deployment timeline not confirmed",
+      "Limited detail on manipulation or locomotion capabilities"
+    ],
+    "price": "Unknown",
+    "verified": false,
+    "sources": [
+      "https://pulse2.com/vindynamics-debuts-dyno-humanoid-robot-at-icra-2026-and-computex-taipei-2026/",
+      "https://www.roboticstomorrow.com/news/2026/06/01/vindynamics-debuts-its-first-humanoid-robot-at-two-of-the-worlds-leading-technology-events/26653/",
+      "https://technode.global/2026/06/03/vietnams-conglomerate-vingroup-launches-humanoid-robots-on-global-stage/"
+    ],
+    "discovered_date": "2026-06-14"
+  },
+  {
+    "id": "vinrobotics-vr-h3",
+    "name": "VR-H3",
+    "manufacturer": "VinRobotics (Vingroup)",
+    "country": "Vietnam",
+    "year": 2026,
+    "generation": "Gen 3",
+    "status": "Prototype",
+    "category": "Industrial",
+    "tagline": "Make In Vietnam industrial humanoid built for factory and hazardous environments",
+    "description": "The VR-H3 is VinRobotics' third-generation humanoid robot developed entirely in-house by Vietnamese engineers, showcased at ICRA 2026 and Computex Taipei 2026. Designed for industrial automation, material handling, and operational support in complex or hazardous environments, it features more than 31 actuators and dual onboard edge computers enabling object lifting, transport, and assembly tasks. The robot also demonstrated advanced teleoperation via VR headset motion-capture technology without requiring external tracking equipment.",
+    "specs": {
+      "height": 178,
+      "weight": null,
+      "dof": 31,
+      "speed": null,
+      "payload": 8,
+      "battery": null,
+      "ip_rating": null,
+      "actuator": "Electric",
+      "connectivity": null
+    },
+    "pros": [
+      "All core technologies developed entirely in-house — mechanical, E/E, AI control",
+      "Demonstrated stable operation in outdoor and crowded real-world environments",
+      "VR headset teleoperation without additional external tracking hardware",
+      "Dual onboard edge computers for real-time processing",
+      "Third-generation platform with iterative development maturity"
+    ],
+    "cons": [
+      "Still in prototype/development stage — commercial timeline not confirmed",
+      "Full hardware specifications not publicly released",
+      "Payload per arm (up to 3 kg per arm) relatively modest",
+      "No pricing or availability information"
+    ],
+    "price": "Unknown",
+    "verified": false,
+    "sources": [
+      "https://interestingengineering.com/ai-robotics/vietnam-vr-h3-humanoid-robot-industrial-grade",
+      "https://www.vingroup.net/en/news/detail/6949/vinrobotics-makes-global-debut-of-make-in-vietnam-humanoid-robot-at-leading-global-tech-events",
+      "https://technode.global/2026/06/03/vietnams-conglomerate-vingroup-launches-humanoid-robots-on-global-stage/",
+      "https://www.originofbots.com/robot/vr-h3-by-vinrobotics-details-specifications-rating"
+    ],
+    "discovered_date": "2026-06-14"
+  },
+  {
+    "id": "ubtech-uworld-u1",
+    "name": "UWORLD U1",
+    "manufacturer": "UBTECH Robotics",
+    "country": "China",
+    "year": 2026,
+    "generation": "Gen 1 / UWORLD Consumer Line",
+    "status": "Pilot",
+    "category": "Social",
+    "tagline": "World's first full-size hyper-bionic humanoid companion robot",
+    "description": "The UWORLD U1 is UBTECH's first consumer-focused humanoid robot under the newly launched UWORLD brand, positioned as an emotional companion rather than an industrial worker. Available in male (183 cm, 42 kg) and female (168 cm, 35.2 kg) variants with lifelike silicone skin, expressive facial features, and 88 degrees of freedom, the U1 uses an onboard emotional AI model to detect user mood through tone, facial expression, and conversation pace. Pre-sales opened on JD.com on June 2, 2026, with deliveries promised by September 15 and an official launch event scheduled for June 30, 2026.",
+    "specs": {
+      "height": 183,
+      "weight": 42,
+      "dof": 88,
+      "speed": null,
+      "payload": null,
+      "battery": 4,
+      "ip_rating": null,
+      "actuator": "Electric",
+      "connectivity": "Wi-Fi"
+    },
+    "pros": [
+      "88 degrees of freedom — highest DOF of any commercially available humanoid",
+      "Lifelike silicone skin and expressive face for natural human interaction",
+      "Emotional AI model with local encrypted memory for privacy",
+      "Strong early demand: 2,100+ preorders in under one week",
+      "Two variants (male/female) with customizable appearance",
+      "Backed by UBTECH's proven industrial humanoid engineering expertise"
+    ],
+    "cons": [
+      "Not designed for domestic chores — limited to communication and social engagement",
+      "Cannot handle stairs, rough terrain, or complex household tasks",
+      "Currently only available in China; no confirmed international distribution",
+      "Final price (~$30,000) and full specs not officially confirmed until June 30 launch",
+      "No support for secondary development by users"
+    ],
+    "price": "~$30k",
+    "verified": false,
+    "sources": [
+      "https://interestingengineering.com/ai-robotics/china-ubtech-humanoid-robot-companions",
+      "https://gagadget.com/en/714781-ubtechs-30000-humanoid-companion-robot-opens-presales-but-only-in-china/",
+      "https://letsdatascience.com/news/ubtech-launches-uworld-u1-humanoid-robot-companions-39ee02ca",
+      "https://www.originofbots.com/news/ubtech-robotics-to-launch-full-size-hyper-realistic-humanoid-robot-u1-on-june-30",
+      "https://autonews.gasgoo.com/articles/icv/ubtech-ultra-bionic-humanoid-robot-pre-orders-surpass-2110-units-2063990784792313857"
+    ],
+    "discovered_date": "2026-06-14"
   }
 ]
